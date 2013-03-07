@@ -17,18 +17,20 @@ Rules:
 
 # ????
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return render_template("board.html", message=u"Hello World")
 
-if __name__ == '__main__':
-    from wsgiref.simple_server import make_server
-    srv = make_server('0.0.0.0', 5000, app)
-    srv.serve_forever()
+if __name__ == "__main__":
+    app.run(
+        host='0.0.0.0',
+        port=5000,
+        debug=True
+    )
 
 
 
