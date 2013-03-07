@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+<head>
+	<title>Tic Tac Toe</title>
+</head>
+<body>
+	<h1>Tic Tac Toe</h1>
+
+	<form action="/" method="post">
+		<table>
+			<tbody>
+				{% for row in data %}
+				{% set outer_loop = loop %}
+				<tr>
+					{% for cell in row %}
+					<td><button type="submit" name="position" value="{{ outer_loop.index0 }}-{{ loop.index0 }}">{{ cell }}</button></td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</form>
+
+	<p>{{ message }}</p>
+</body>
+</html>
