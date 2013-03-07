@@ -5,6 +5,39 @@ app = Flask(__name__)
 GET = "GET"
 POST = "POST"
 BOARD_SIZE = 3
+X = 'Player1'
+Y = 'Player2'
+
+
+def detect_rows(board):
+    for row in board:
+        x_detected = True
+        o_detected = True
+        for item in row:
+            if item != X:
+                x_detected = False
+            if item != Y:
+                y_detected = False
+        if x_detected:
+            row = ['XX'] * 3
+        if o_detected:
+            row = ['YY'] * 3
+        if x_detected or o_detected:
+            return board, True
+    return board, False
+
+
+def detect_lines(board):
+    # detect rows
+    board, detected = detect_rows(board)
+    if detected:
+        return board
+
+    # detect columns
+
+
+    # detect diagonals
+
 
 @app.route("/", methods=[GET, POST])
 def mark():
@@ -15,6 +48,7 @@ def mark():
                 form_element_id = "{row}-{col}".format(row=row_idx, col=col_idx)
                 board[row_idx][col_idx] = request.form[form_element_id]
     return render_template('board.html', board=board)
+
 
 if __name__ == "__main__":
     app.run(
