@@ -7,9 +7,9 @@
 
 <form class="board">
 {% for row in board %}
-<!-- 	{% set outer_loop = loop %} -->
+	{% set outer_loop = loop %}
 	{% for column in row %}
-		<button class="empty" id="{{ row.index }}-{{ column.index }}"></button>
+		<button class="empty" id="{{ outer_loop.index }}-{{ loop.index }}"></button>
 	{% endfor %}
 {% endfor %}
 </form>
