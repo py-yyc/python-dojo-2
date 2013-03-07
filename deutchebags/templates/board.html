@@ -2,6 +2,33 @@
 <html>
 <head>
     <title>Super Awesome TIC TAC TOE!</title>
+    <!-- <link href="css/style.css" rel="stylesheet"/> -->
+    <style>
+    	form {
+    		margin: auto;
+    		width: 648px;
+    		height: 648px;
+    		position:absolute; top:0; bottom:0; left:0; right:0;
+    	}
+
+    	input {
+    		width: 200px;
+    		height: 200px;
+    		float: left;
+    		border-radius: 16px;
+    		border: 0;
+    		background-color: #ccc;
+    		margin: 8px;
+    	}
+
+    	input:nth-child(3n+4) {
+    		clear: both;
+    	}
+
+    	input:hover {
+    		background-color: #666;
+    	}
+    </style>
 </head>
 <body>
 
@@ -9,7 +36,7 @@
 {% for row in board %}
 	{% set outer_loop = loop %}
 	{% for item in row %}
-		<button class="{{ item }}" id="{{ outer_loop.index }}-{{ loop.index }}"></button>
+		<input type="submit" class="{{ item }}" value="{{ outer_loop.index }}-{{ loop.index }}"/>
 	{% endfor %}
 {% endfor %}
 </form>
