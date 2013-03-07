@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ message }}</title>
+    <title>Super Awesome TIC TAC TOE!</title>
 </head>
 <body>
 
-<h1>{{ message }}</h1>
+<form class="board">
+{% for column in range(boardsize) %}
+	{% for row in range(boardsize) %}
+		<button class="empty" id="column{{ column }}row{{ row }}"></div>
+	{% endfor %}
+{% endfor %}
+</form>
 
 </body>
 </html>
