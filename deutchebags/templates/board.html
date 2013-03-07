@@ -11,7 +11,7 @@
     		position:absolute; top:0; bottom:0; left:0; right:0;
     	}
 
-    	input {
+    	button {
     		width: 200px;
     		height: 200px;
     		float: left;
@@ -22,19 +22,19 @@
     		color: transparent;
     	}
 
-    	input:nth-child(3n+4) {
+    	button:nth-child(3n+4) {
     		clear: both;
     	}
 
-    	input:hover {
+    	button:hover {
     		background-color: #666;
     	}
 
-    	input.player1 {
+    	button.player1 {
     		background-color: #F00;
     	}
 
-    	input.player2 {
+    	button.player2 {
     		background-color: #00F;
     	}
     </style>
@@ -45,7 +45,7 @@
 {% for row in board %}
 	{% set outer_loop = loop %}
 	{% for item in row %}
-		<input type="submit" class="{{ item }}" value="{{ outer_loop.index }}-{{ loop.index }}"/>
+		<button type="submit" class="{{ item }}" value="{{ outer_loop.index }}-{{ loop.index }}"/>
 	{% endfor %}
 {% endfor %}
 </form>
