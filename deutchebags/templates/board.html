@@ -6,9 +6,10 @@
 <body>
 
 <form class="board">
-{% for column in range(boardsize) %}
-	{% for row in range(boardsize) %}
-		<button class="empty" id="column{{ column }}row{{ row }}"></div>
+{% for row in board %}
+<!-- 	{% set outer_loop = loop %} -->
+	{% for column in row %}
+		<button class="empty" id="{{ row.index }}-{{ column.index }}"></button>
 	{% endfor %}
 {% endfor %}
 </form>
