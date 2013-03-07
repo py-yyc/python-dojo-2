@@ -45,7 +45,7 @@ def mark():
     if request.method == POST:
         for row_idx in range(BOARD_SIZE):
             for col_idx in range(BOARD_SIZE):
-                form_element_id = "{row}-{col}".format(row=row_idx, col=col_idx)
+                form_element_id = "{row}-{col}".format(row=row_idx+1, col=col_idx+1)
                 board[row_idx][col_idx] = request.form[form_element_id]
     return render_template('board.html', board=board)
 
