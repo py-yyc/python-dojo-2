@@ -45,7 +45,7 @@
 {% for row in board %}
 	{% set outer_loop = loop %}
 	{% for item in row %}
-		<button type="submit" class="{{ item }}" value="{{ outer_loop.index }}-{{ loop.index }}"/>
+		<button type="submit" name="position" class="{{ item }}" value="{{ outer_loop.index }}-{{ loop.index }}"></button>
 	{% endfor %}
 {% endfor %}
 </form>
