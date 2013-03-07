@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number List</title>
+</head>
+<body>
+<h1>Number List</h1>
+
+<form action="/" method=post>
+    <p>
+        {%- if error -%}
+        <span style="color: red">{{ error }}</span>
+        {%- endif %}
+        {%- if success -%}
+        <span style="color: darkgreen">{{ success }}</span>
+        {%- endif %}
+    </p>
+    <div>
+        <label for="number">Number:</label>
+        <input type="text" name="number" id="number" placeholder="eg. 5, 10, 3.14">
+        <input type="submit" value="Add Number">
+    </div>
+</form>
+
+{% if items -%}
+<h2>Numbers in this session</h2>
+<ul>
+    {%- for i in items %}
+    <li>{{ i }}</li>
+    {%- endfor %}
+</ul>
+{%- endif %}
+
+</body>
+</html>
